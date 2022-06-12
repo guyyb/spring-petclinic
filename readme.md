@@ -72,7 +72,6 @@ The following items should be installed in your system:
     ```
     git clone https://github.com/spring-projects/spring-petclinic.git
     ```
-
 2) Inside IntelliJ IDEA
     In the main menu, choose `File -> Open` and select the Petclinic [pom.xml](pom.xml). Click on the `Open` button.
 
