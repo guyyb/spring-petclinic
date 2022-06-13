@@ -21,12 +21,9 @@ jobs:
       - name: Test
         run: |
           jf gradle clean test
-      - name: Build
+      - name: Build & Publish artifact
         run: |
-          jf gradle clean build -x test
-      - name: Publish artifact
-        run: |
-          jf gradle clean artifactoryPublish -b build.gradle -x test
+          jf gradle clean artifactoryPublish -b build.gradle
           # -x test --build-name info.name --build-number info.number
       - name: Publish build info
         run: |
