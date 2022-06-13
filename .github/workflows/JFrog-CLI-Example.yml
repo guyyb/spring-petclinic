@@ -12,6 +12,15 @@ jobs:
         env:
           JF_ENV_1: ${{ secrets.JF_ENV_1 }}
           JFROG_CLI_BUILD_PROJECT: ${{ secrets.JFROG_CLI_BUILD_PROJECT }}
+      - name: Test
+        run: |
+          jf gradle clean test
+      - name: Build
+        run: |
+          jf gradle clean build -x test
+      - name: Publish
+        run: |
+          jf rt u build/libs/spring-petclinic-2.6.0-plain.jar guy-gradle-virtual
       - name: Run JFrog CLI
         run: |
           # Collect environment variables for the build
@@ -19,4 +28,4 @@ jobs:
           # Collect VCS details from git and add them to the build
           jf rt bag
           # Publish build info
-          jf rt bp --project guy-test
+          jf rt bp --project guy-onboarding
