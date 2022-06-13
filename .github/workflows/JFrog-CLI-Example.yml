@@ -15,6 +15,9 @@ jobs:
         env:
           JF_ENV_1: ${{ secrets.JF_ENV_1 }}
           JFROG_CLI_BUILD_PROJECT: ${{ secrets.JFROG_CLI_BUILD_PROJECT }}
+      - name: Setup gradle
+        run: |
+          jf gradlec
       - name: Test
         run: |
           jf gradle clean test
