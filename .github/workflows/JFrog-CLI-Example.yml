@@ -14,7 +14,6 @@ jobs:
         uses: jfrog/setup-jfrog-cli@v2
         env:
           JF_ENV_1: ${{ secrets.JF_ENV_1 }}
-          JFROG_CLI_BUILD_PROJECT: ${{ secrets.JFROG_CLI_BUILD_PROJECT }}
       - name: Setup gradle
         run: |
           jf gradlec --repo-resolve guy-gradle-virtual --repo-deploy guy-gradle-virtual
