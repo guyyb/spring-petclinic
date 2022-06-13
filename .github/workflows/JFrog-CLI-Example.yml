@@ -26,7 +26,8 @@ jobs:
           jf gradle clean build -x test
       - name: Publish artifact
         run: |
-          jf gradle clean artifactoryPublish guy-gradle-virtual -x test --build-name info.name --build-number info.number
+          jf gradle clean artifactoryPublish guy-gradle-virtual
+          # -x test --build-name info.name --build-number info.number
       - name: Publish build info
         run: |
           # Collect environment variables for the build
