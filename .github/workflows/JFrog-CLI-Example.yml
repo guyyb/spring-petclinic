@@ -17,7 +17,7 @@ jobs:
           JFROG_CLI_BUILD_PROJECT: ${{ secrets.JFROG_CLI_BUILD_PROJECT }}
       - name: Setup gradle
         run: |
-          jf gradlec
+          jf gradlec --repo-resolve guy-gradle-virtual --repo-deploy guy-gradle-virtual
       - name: Test
         run: |
           jf gradle clean test
@@ -26,7 +26,7 @@ jobs:
           jf gradle clean build -x test
       - name: Publish artifact
         run: |
-          jf gradle clean artifactoryPublish guy-gradle-virtual
+          jf gradle clean artifactoryPublish -b build.gradle
           # -x test --build-name info.name --build-number info.number
       - name: Publish build info
         run: |
