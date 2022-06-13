@@ -26,7 +26,7 @@ jobs:
           jf gradle clean build -x test
       - name: Publish artifact
         run: |
-          jf rt artifactoryPublish -b build/libs/spring-petclinic-2.6.0-plain.jar guy-gradle-virtual --build-name info.name --build-number info.number
+          jf gradle clean artifactoryPublish -b build/libs/spring-petclinic-2.6.0-plain.jar guy-gradle-virtual -x test --build-name info.name --build-number info.number
       - name: Publish build info
         run: |
           # Collect environment variables for the build
