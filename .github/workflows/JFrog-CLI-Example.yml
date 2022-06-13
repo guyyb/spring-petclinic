@@ -31,4 +31,4 @@ jobs:
           # Collect VCS details from git and add them to the build
           jf rt bag
           # Publish build info
-          jf rt bp --project guy-onboarding
+          jf rt bp
