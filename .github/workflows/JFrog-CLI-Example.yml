@@ -4,6 +4,9 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      JFROG_CLI_BUILD_PROJECT: ${{ secrets.JFROG_CLI_BUILD_PROJECT }}
+      JFROG_CLI_EXTRACTORS_REMOTE: ${{ secrets.JFROG_CLI_EXTRACTORS_REMOTE }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
