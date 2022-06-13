@@ -24,7 +24,6 @@ jobs:
       - name: Build & Publish artifact
         run: |
           jf gradle clean artifactoryPublish -b build.gradle
-          # -x test --build-name info.name --build-number info.number
       - name: Publish build info
         run: |
           # Collect environment variables for the build
